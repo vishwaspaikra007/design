@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Design</title>
+    <style>
+        html
+        {
+            background: black;
+            width:500vw;
+            height: 100vh;
+            margin: 0px;
+            overflow-y: hidden;
+            scroll-snap-type: x mandatory;
+        }
+        body
+        {
+            margin: 0px;
+        }
+        #scrol
+        {
+            display: grid;
+            grid-template-columns: auto auto auto auto auto;
+        }
+        .pages
+        {
+            scroll-snap-align: start;
+            width: 100vw;
+            height: 100vh;
+            background: orange;
+            /* transform: rotate(-4.3deg); */
+            margin: 0px;
+            display: grid;
+            grid-template-columns: auto;
+            box-sizing: border-box;
+        }
+        #pages1,#pages3,#pages5
+        {
+            background: red;
+        }
+        .frames
+        {
+            margin: auto;
+            border: 1px dashed black;
+            border-radius: 20px;
+            height: 70vh;
+            display: grid;
+            grid-template-columns: auto;
+            box-sizing: border-box;
+        }
+        .frame1
+        {
+            transform: rotate(1deg);
+            width: 50vw;
+        }
+        .frame2
+        {
+            transform: rotate(2deg);
+            width: 50vw;
+        }
+        .frame3
+        {
+            transform: rotate(-2deg);
+            width: 50vw;
+        }
+        .frame4
+        {
+            transform: rotate(-3deg);
+            width: 50vw;
+        }
+    </style>
+</head>
+<body>
+    <div id="scrol">
+    <div class="pages" id="pages1">
+        <div class="frames frame1">
+        <div class="frames frame2">
+            <div class="frames frame3" >
+                <div class="frames frame4" ></div>
+            </div>        
+        </div>
+        </div>
+    </div>
+    <div class="pages" id="pages2">
+        <div class="frames frame1">
+            <div class="frames frame2">
+                <div class="frames frame3" >
+                    <div class="frames frame4" ></div>
+                </div>        
+            </div>
+        </div>
+    </div>
+    <div class="pages" id="pages3">
+        <div class="frames frame1">
+            <div class="frames frame2">
+                <div class="frames frame3" >
+                    <div class="frames frame4" ></div>
+                </div>        
+            </div>
+        </div>
+    </div>
+    <div class="pages" id="pages4">
+        <div class="frames frame1">
+            <div class="frames frame2">
+                <div class="frames frame3" >
+                    <div class="frames frame4" ></div>
+                </div>        
+            </div>
+        </div>
+    </div>
+    <div class="pages" id="pages5">
+        <div class="frames frame1">
+            <div class="frames frame2">
+                <div class="frames frame3" >
+                    <div class="frames frame4" ></div>
+                </div>        
+            </div>
+        </div>
+    </div>
+</div>
+    <script>
+        document.getElementById('scrol').addEventListener('touchstart',f);
+        function f (e) {
+            console.log(e.toches);
+            document.getElementById("page1").innerHTML = e.toches;
+        }
+    </script>
+</body>
+</html>
