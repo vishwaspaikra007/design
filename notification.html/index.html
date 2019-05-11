@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="call()" >press</button>
+    <script>
+        if("Notification" in window) {
+            if(Notification.permission !== "default") {
+                const title = "First Notification";
+                const options = {
+                    body: "Hello vishwas it's your first notification"
+                };
+                var n = new Notification(title, options);
+            } else {
+                Notification.requestPermission()
+                    .then(result => {
+                        console.log(result);
+                    })
+                    .catch(err => {
+                        console.log(err);
+
+                    })
+            }
+        }
+        var call = () => {
+            const title = "Second Notification";
+            const options = {
+                body: "customized notification"
+            };
+            var n = new Notification(title, options);   
+        }
+            
+    </script>
+</body>
+</html>
