@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <title>Document</title>
+    <style>
+        iframe {
+            width: 50%;
+            height: 500px;
+            display: block;
+            margin: auto;
+            margin-top: 30px;
+            border: 46px solid #1a1a1a;
+            border-left-width: 15px;
+            border-right-width: 15px;
+            border-radius: 10px;
+            resize: both;
+        } body {
+            margin: 0px;
+            width: 100%;
+            height: 100vh;
+            padding: 30px;
+        } 
+        @media only screen and (max-width:600px)
+        {
+            iframe {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button onclick="src(1)" class="btn btn-success" id="button1">chrome tabs my version</button>
+    <button onclick="src(2)" class="btn btn-success" id="button2">crome tab design</button>
+    <button onclick="src(3)" class="btn btn-success" id="button3">div slide update delete</button>
+    <button onclick="src(4)" class="btn btn-success" id="button4">google logo</button>
+    <button onclick="src(5)" class="btn btn-success" id="button5">notification</button>
+    <button onclick="src(6)" class="btn btn-success" id="button6">slide like phone</button>
+    <button onclick="src(7)" class="btn btn-success" id="button7">time left prgress</button> 
+    <iframe src="" frameborder="0"></iframe>
+    <script>
+        function src(a) {
+            var src = document.querySelector("#button" + a);
+            document.querySelector("iframe").src = `./${src.textContent}/index.html`;
+        }
+        
+    </script>
+</body>
+</html>

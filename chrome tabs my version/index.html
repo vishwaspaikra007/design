@@ -6,6 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>chrome tab design</title>
     <style>
+        ::-webkit-scrollbar {
+            width: 0px;
+            height: 0px;
+        } ::-webkit-scrollbar-track {
+            background: green;
+            width: 1px;
+        } ::-webkit-scrollbar-thumb {
+            width: 0px;
+        } 
         body {
             margin: 0px;
         }
@@ -42,6 +51,7 @@
             scroll-behavior: smooth;
             transition: 0.5s;
             margin-top: 2px;
+            border: 1px solid;
         } #tabHead1{
             background: white;
             color: black;
