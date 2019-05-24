@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Photo Stack</title>
+    <style>
+        body {
+            background: lightblue;
+            display: grid;
+            box-sizing: border-box;
+            grid-template-columns: 33.33% 33.33% 33.33%;
+        }.image {
+            box-sizing: border-box;
+            width: 96%;
+            height: auto;
+            padding: 10px;
+            background: white;
+            margin-top: 10px;
+            display: inline-block;
+        } .image img {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="containerPhoto"></div>
+    <div class="containerPhoto"></div>
+    <div class="containerPhoto"></div>
+</body>
+    <script>
+        var b = document.querySelectorAll('.containerPhoto');
+            for(i=0;i<200;i++) {
+            if(i%5 == 0)
+                continue;
+            b[i%3].innerHTML += `<div class="image"><img src="./img${i%4}.png" alt="img"></div>`;
+        }        
+    </script>
+</html>
