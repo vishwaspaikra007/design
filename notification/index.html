@@ -7,7 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <button onclick="call()" >press</button>
+    <input id='timeNotify' type="datetime-local">
+    <button onclick="call()" >Notify me</button>
     <script>
         if("Notification" in window) {
             if(Notification.permission !== "default") {
@@ -28,11 +29,22 @@
             }
         }
         var call = () => {
-            const title = "Second Notification";
-            const options = {
-                body: "customized notification"
-            };
-            var n = new Notification(title, options);   
+            var timeNotify = document.querySelector('#timeNotify');
+            time = new Date(timeNotify.value);
+            var loop = setInterval(() => {
+                console.log(Date.now() + " and " + time.getTime())
+                if(Date.now() >= time.getTime()) {
+                    const title = "Time Notification";
+                    const options = {
+                        body: "Time is" + time.toString()
+                    };
+                    var n = new Notification(title, options);
+                    clearInterval(loop);
+
+                }
+            }, 1000);
+            
+               
         }
             
     </script>
