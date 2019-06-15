@@ -16,7 +16,7 @@
             border: 1px solid black;
             box-sizing: border-box;
             display: grid;
-            grid-template-columns: 49.5% 1% 49.5% 
+            grid-template-columns: 49.95% 0.1% 49.95% 
         } .box {
             border: 1px solid black;
             box-sizing: border-box;
@@ -34,6 +34,14 @@
             background: rgba(197,0,0, 0.5)
         } #box3 {
             background: rgba(0,255,0,0.5)
+        } #box2::after {
+            content: "";
+            display: block;
+            height: 100%;
+            width: 20px;
+            position: absolute;
+            margin-left: -10px;
+            z-index: 10;
         }
     </style>
 </head>

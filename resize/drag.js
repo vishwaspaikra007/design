@@ -35,13 +35,11 @@ function drag(e) {
 
         xOffset = currentX;
 
-        setTranslate(currentX ,dragItem);
+        //setTranslate(currentX ,dragItem);
 
         console.log(e.clientX);
-        box1.style.width = e.clientX + 'px';
-        box3.style.width = container.clientWidth - e.clientX + 'px';
-        container.style.gridTemplateColumns = (e.clientX/container.clientWidth)*100 
-                    + '%' + '1%' + (container.clientWidth-e.clientX/container.clientWidth)*100 + '%';
+        container.style.gridTemplateColumns = ((e.clientX/container.clientWidth)*100 - 0.05)
+                    + '%' + '0.1%' + (((container.clientWidth - e.clientX)/container.clientWidth)*100 - 0.05) + '%';
     }
 }
 
