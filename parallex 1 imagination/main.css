@@ -6,8 +6,11 @@ body {
     padding: 0px;
     height: 100vh;
     width: 100vw;
-    background: darkcyan;
+    background: yellow;
     overflow: hidden;
+    transition: 400ms;
+    background-position: center;
+    background-size: cover;
 } .mainContainer {
     width: 100%;
     height: 100vh;
@@ -27,51 +30,50 @@ body {
 } .box {
     width: 50%;
     height: 100vh;
-    background-image: radial-gradient(white 31%,white 21%,white 51%,black 53%,yellow 33%, yellow 33%);
+    background-image: radial-gradient(white 31%,white 21%,white 37%,black 39%,yellow 33%, red 33%);
     background-repeat: round;
     position: absolute;
     top: 0vh;
     z-index: 2;
-    box-shadow: 0 0 15px 15px solid black;
-    background-position: 0 100%;
+    background-size: 200%;
+    background-position: 180% 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-items: right;
 } #box2 {
     width: 50%;
-    background-image: radial-gradient(white 31%,white 21%,white 51%,black 53%,yellow 33%, yellow 33%);
-    background-position: 0 200% ;
+    background-position: -19% 200%;
     transform: rotate(180deg);
     margin-left: 50%;
 } .eye {
-    width: 50%;
+    width: 30%;
     background: url(./eye.jpg);
     box-shadow: 0 0 10px 3px black;
     background-position: center;
     background-size: cover;
-    height: 50%;
+    height: 30%;
     position: relative;
     border-radius: 50%;
     top: 0vh;
-    left: 0vw;
+    left: 32vw;
 } #eye2 {
     animation-name: eyeAnimation;
     animation-duration:  5s;
     animation-timing-function:  linear;
     animation-delay:  0s;
     animation-iteration-count:  infinite;
-
+    animation-direction: reverse'
 } @keyframes eyeAnimation {
-    0%{top: 0vh;left: 0vw;}
-    5%{top: 10vh;left: 2vw;}
-    20%{top: 10vh;left: 2vw;}
-    25%{top: 0vh;left: 0vw;}
-    40%{top: 0vh;left: 0vw;}
-    45%{top: 0vh;left: -5vw;}
-    60%{top: 0vh;left: -5vw;}
-    65%{top: 0vh;left: 5vw;}
-    80%{top: 0vh;left: 5vw;}
-    100%{top: 0vh;left: 0vw;}
+    0%{top: 0vh;left: 32vw;}
+    5%{top: 9vh;left: 30vw;}
+    20%{top: 9vh;left: 30vw;}
+    25%{top: 0vh;left: 32vw;}
+    40%{top: 0vh;left: 32vw;}
+    45%{top: 0vh;left: 32vw;}
+    60%{top: 0vh;left: 32vw;}
+    65%{top: 0vh;left: 22vw;}
+    80%{top: 0vh;left: 22vw;}
+    100%{top: 0vh;left: 32vw;}
 }  #eye1 {
     animation-name: eyeAnimation2;
     animation-duration:  5s;
@@ -79,14 +81,26 @@ body {
     animation-delay:  0s;
     animation-iteration-count:  infinite;
 } @keyframes eyeAnimation2 {
-    0%{top: 0vh;left: 0vw;}
-    5%{top: -10vh;left: -2vw;}
-    20%{top: -10vh;left: -2vw;}
-    25%{top: 0vh;left: 0vw;}
-    40%{top: 0vh;left: 0vw;}
-    45%{top: 0vh;left: 5vw;}
-    60%{top: 0vh;left: 5vw;}
-    65%{top: 0vh;left: -5vw;}
-    80%{top: 0vh;left: -5vw;}
-    100%{top: 0vh;left: 0vw;}
+    0%{top: 0vh;left: 32vw;}
+    5%{top: -9vh;left: 26vw;}
+    20%{top: -9vh;left: 26vw;}
+    25%{top: 0vh;left: 32vw;}
+    40%{top: 0vh;left: 32vw;}
+    45%{top: 0vh;left: 22vw;}
+    60%{top: 0vh;left: 22vw;}
+    65%{top: 0vh;left: 32vw;}
+    80%{top: 0vh;left: 32vw;}
+    100%{top: 0vh;left: 32vw;}
+} .meLooking {
+    transform-origin: bottom;
+    transform: rotateX(90deg);
+    width: 40vw;
+    height: 40vw;
+    position: fixed;
+    bottom: 0;
+    left: 10vw;
+    background: transparent;
+    transition: 400ms;
+    display: flex;
+    z-index: 2;
 }
