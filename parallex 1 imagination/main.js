@@ -9,6 +9,5 @@ mainContainer.onscroll = function() { parallex()};
     var scrolled1 = (scroll1/height1)*100;
     box1.style.marginLeft = "-" + (box1.clientWidth/100)*scrolled1 + "px";
     box2.style.marginLeft = box1.clientWidth + 2*(box2.clientWidth/100)*scrolled1 + "px";
-    box1.style.transform = `rotate(${scrolled1}deg)`;
-
+    box1.style.transform = `rotate(${scrolled1*1.3}deg)`;
  }
