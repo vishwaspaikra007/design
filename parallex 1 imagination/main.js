@@ -3,6 +3,8 @@ var box1 = document.querySelector("#box1")
 var box2 = document.querySelector("#box2")
 var body = document.querySelector("body")
 var meLooking = document.querySelector(".meLooking")
+var dialogue1 = document.querySelector(".dialogue1")
+var dialogueAnimator = document.querySelectorAll(".dialogueAnimator")
 
 mainContainer.onscroll = function() { parallex()};
  function parallex() {
@@ -10,27 +12,42 @@ mainContainer.onscroll = function() { parallex()};
     var height1 = mainContainer.scrollHeight - document.documentElement.clientHeight;
     var scrolled1 = (scroll1/height1)*100;
     box2.style.marginLeft = box1.clientWidth + (box2.clientWidth/100)*scrolled1 + "px";
-    body.style.background = 'yellow';
+    body.style.background = 'black';
 
     console.log(scrolled1);
+    if(scrolled1 > 98.6) {
+        meLooking.classList.add("slideImageAnimator");
+    } 
     if(scrolled1 > 68.6) {
-        meLooking.style.transition = "1s";
         body.style.backgroundColor = 'darkcyan';
+
+        meLooking.style.transition = "1s";
         meLooking.style.bottom = "0vh";
         meLooking.style.transform = `rotateX(0deg)`;
+
+        dialogue1.style.opacity = "1";
+        dialogue1.style.outlineOffset = "-30px";
+
+        dialogueAnimator[0].style.transition = "1s ease-out";
+        dialogueAnimator[0].style.height = "0";
+        dialogueAnimator[1].style.transition = "1s ease-out";
+        dialogueAnimator[1].style.height = "0";
     } else {
+        meLooking.classList.remove("slideImageAnimator");
+
         meLooking.style.transition = "400ms";
+        meLooking.style.left = "10vw";
         meLooking.style.transform = `rotateX(90deg)`;
+
+        dialogue1.style.outlineOffset = "0px";
+        dialogue1.style.opacity = "0";
+
+        dialogueAnimator[0].style.transition = "1s ease-in";
+        dialogueAnimator[0].style.height = "100%";
+        dialogueAnimator[1].style.transition = "1s ease-in";
+        dialogueAnimator[1].style.height = "100%";
     }
-    if(scrolled1 < 40)
-    {
-        box1.style.transition = '0s';
-        box1.style.marginLeft = "-" + (box1.clientWidth/100)*scrolled1 + "px";
-        box1.style.backgroundImage = 'radial-gradient(white 31%,white 21%,white 37%,black 39%,yellow 33%, yellow 33%)';
-    } else {
-        box1.style.marginLeft = '-25%';
-        box1.style.transition = '1s';
-        box2.style.marginLeft = '100%';
-        box1.style.backgroundImage = 'radial-gradient(transparent 31%,transparent 21%,transparent 37%,black 39%,transparent 33%, transparent 33%)';
-    }
+    box1.style.transition = '0s';
+    box1.style.marginLeft = "-" + (box1.clientWidth/100)*scrolled1 + "px";
+
  }
