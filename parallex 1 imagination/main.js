@@ -9,12 +9,22 @@ var dialogue1 = document.querySelector(".dialogue1")
 var containerForBox = document.querySelector(".containerForBox")
 
 dialogue1.addEventListener("mouseover",(e)=> {
+    meLooking.style.filter = "blur(11px)";
+
     dialogue1.style.filter = "blur(0.5px)";
-    meLooking.style.filter = "blur(5px)";
+    dialogue1.style.outlineOffset = "-40px";
+
+    dialogueAnimator[0].style.height = "0";
+    dialogueAnimator[1].style.height = "0";
 });
 dialogue1.addEventListener("mouseout",(e)=> {
-    dialogue1.style.filter = "blur(5px)";
     meLooking.style.filter = "blur(0px)";
+
+    dialogue1.style.filter = "blur(11px)";
+    dialogue1.style.outlineOffset = "0px";
+
+    dialogueAnimator[0].style.height = "100%";
+    dialogueAnimator[1].style.height = "100%";
 });
 
 mainContainer.onscroll = function() { parallex()};
@@ -37,12 +47,6 @@ mainContainer.onscroll = function() { parallex()};
         meLooking.style.transform = `rotateX(0deg)`;
 
         dialogue1.style.opacity = "1";
-        dialogue1.style.outlineOffset = "-30px";
-
-        dialogueAnimator[0].style.transition = "1s ease-out";
-        dialogueAnimator[0].style.height = "0";
-        dialogueAnimator[1].style.transition = "1s ease-out";
-        dialogueAnimator[1].style.height = "0";
     } else {
         meLooking.classList.remove("slideImageAnimator");
 
@@ -50,13 +54,7 @@ mainContainer.onscroll = function() { parallex()};
         meLooking.style.left = "10vw";
         meLooking.style.transform = `rotateX(90deg)`;
 
-        dialogue1.style.outlineOffset = "0px";
         dialogue1.style.opacity = "0";
-
-        dialogueAnimator[0].style.transition = "1s ease-in";
-        dialogueAnimator[0].style.height = "100%";
-        dialogueAnimator[1].style.transition = "1s ease-in";
-        dialogueAnimator[1].style.height = "100%";
     }
     if(scrolled1 > 80)
     {
