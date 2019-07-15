@@ -6,7 +6,8 @@ var meLooking = document.querySelector(".meLooking")
 var dialogue1 = document.querySelector(".dialogue1")
 var dialogueAnimator = document.querySelectorAll(".dialogueAnimator")
 var dialogue1 = document.querySelector(".dialogue1")
-var containerForBox = document.querySelector(".containerForBox")
+var containerForBox = document.querySelector(".containerForBox");
+var dialogue1Menu = document.querySelector(".dialogue1Menu");
 
 dialogue1.addEventListener("mouseover",(e)=> {
     meLooking.style.filter = "blur(11px)";
@@ -25,7 +26,29 @@ dialogue1.addEventListener("mouseout",(e)=> {
 
     dialogueAnimator[0].style.height = "100%";
     dialogueAnimator[1].style.height = "100%";
+
 });
+
+dialogue1.addEventListener('click',e => {
+    dialogue1.style.width = 'calc(100% - 17px)';
+    dialogue1.style.height = '100vh';
+    dialogue1.style.top = '0px';
+    dialogue1.style.left = '0px';
+    dialogue1.style.zIndex = '3';
+
+    dialogue1Menu.style.display = 'block';
+
+})
+dialogue1Menu.addEventListener('click',e => {
+    dialogue1.style.width = '50vw';
+    dialogue1.style.height = '50vh';
+    dialogue1.style.top = '25vh';
+    dialogue1.style.left = '35vw';
+    dialogue1.style.zIndex = '1';
+
+    dialogue1Menu.style.display = 'none';
+
+})
 
 mainContainer.onscroll = function() { parallex()};
  function parallex() {

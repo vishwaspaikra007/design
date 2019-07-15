@@ -157,4 +157,12 @@ body {
     } .meLooking {
         height: 70vh;
     }
+} .dialogue1Menu {
+    width: 50px;
+    height: 50px;
+    background: orange;
+    position: absolute;
+    top: 3vh;
+    left: calc(100% - 67px);
+    display: none;
 }
