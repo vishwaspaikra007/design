@@ -8,15 +8,24 @@ var dialogueAnimator = document.querySelectorAll(".dialogueAnimator")
 var dialogue1 = document.querySelector(".dialogue1")
 var containerForBox = document.querySelector(".containerForBox");
 var dialogue1Menu = document.querySelector(".dialogue1Menu");
+var buildings = document.querySelector(".buildings");
+var contentSubDialogue2 = document.querySelector("#contentSubDialogue2 > span");
 
 dialogue1.addEventListener("mouseover",(e)=> {
     meLooking.style.filter = "blur(11px)";
 
     dialogue1.style.filter = "blur(0.5px)";
     dialogue1.style.outlineOffset = "-40px";
+    if( dialogue1.style.width == '50vw' || dialogue1.style.width == '')
+        dialogue1.style.cursor = "zoom-in";
+    else
+        dialogue1.style.cursor = "default";
+
 
     dialogueAnimator[0].style.height = "0";
     dialogueAnimator[1].style.height = "0";
+
+    buildings.style.filter = "blur(8px)";
 });
 dialogue1.addEventListener("mouseout",(e)=> {
     meLooking.style.filter = "blur(0px)";
@@ -24,8 +33,10 @@ dialogue1.addEventListener("mouseout",(e)=> {
     dialogue1.style.filter = "blur(11px)";
     dialogue1.style.outlineOffset = "0px";
 
-    dialogueAnimator[0].style.height = "100%";
-    dialogueAnimator[1].style.height = "100%";
+    dialogueAnimator[0].style.height = "20%";
+    dialogueAnimator[1].style.height = "20%";
+
+    buildings.style.filter = "blur(30px)";
 
 });
 
@@ -35,8 +46,11 @@ dialogue1.addEventListener('click',e => {
     dialogue1.style.top = '0px';
     dialogue1.style.left = '0px';
     dialogue1.style.zIndex = '3';
+    dialogue1.style.cursor = "default";
 
     dialogue1Menu.style.display = 'block';
+
+    contentSubDialogue2.innerHTML = "Scroll to know about me";
 
 })
 dialogue1Menu.addEventListener('click',e => {
@@ -47,6 +61,9 @@ dialogue1Menu.addEventListener('click',e => {
     dialogue1.style.zIndex = '1';
 
     dialogue1Menu.style.display = 'none';
+
+    contentSubDialogue2.innerHTML = "Click to know more";
+
 
 })
 
