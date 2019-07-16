@@ -34,6 +34,9 @@ var mouseoverDialogue1 = ()=> {
         dialogue1.style.cursor = "default";
 
     buildings.style.filter = "blur(8px)";
+
+    dialogueAnimator[0].style.width = "100%";
+    dialogueAnimator[1].style.width = "100%";
     // end of replacement of mouse over
 }
 dialogue1.addEventListener("mouseout",(e)=> { mouseoutDialogue1() });
@@ -45,6 +48,9 @@ var mouseoutDialogue1 = ()=> {
 
     dialogue1.style.filter = "blur(11px)";
     dialogue1.style.outlineOffset = "0px";
+
+    dialogueAnimator[0].style.width = "200%";
+    dialogueAnimator[1].style.width = "200%";
 
     buildings.style.filter = "blur(30px)";
 }
