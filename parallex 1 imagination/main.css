@@ -112,43 +112,38 @@ body {
     top: 25vh;
     left: 35vw;
     transition: 600ms;
-    display: grid;
-    grid-template-rows: 50% 50%;
     opacity: 0;
     transition: 600ms;
     outline: 2px solid white;
     outline-offset: 0px;
-    padding: 30px;
+    padding: 40px;
     filter: blur(11px);
     z-index: 1;
     font-family: 'Spectral', serif;
     cursor: zoom-in;
-} .dialogueContainer {
-    font-size: -webkit-xxx-large;
-    overflow: hidden;
-} .contentDialogue {
+} .areyoureadyContainer {
     width: 100%;
-    height: 100%;
+    display: block;
+    position: relative;
+    transition: 600ms;
+    display: grid;
+    grid-template-columns: 50% 50%;
+} .dialogueContainer {
+    font-size: 24px;
+} .contentDialogue {
+    display: flex;
+    align-items: center;
+    width: 100%;
     transition: 500ms;
     transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 } #contentDialogue1 {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+    justify-content: flex-end;   
+    color: white;
+    font-weight: bold;
 }  #contentDialogue2 {
-    width: 100%;
-    height: 90%;    
-    display: grid;
-    grid-template-rows: 90% 10%;
-} #contentSubDialogue1 {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
+    justify-content: flex-start;
 } #contentSubDialogue2 {
     width: 100%;
-    height: 100%;
     font-size: 10px;
     direction: rtl;
 } #contentSubDialogue2 > span {
