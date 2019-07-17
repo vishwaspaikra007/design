@@ -41,9 +41,14 @@
             scroll-snap-type: y mandatory;
             transition: ease-in-out;
         } .slide img {
-            width: 40vw;
-            height: 40vw;
+            width: auto;
+            height: 70vh;
             border: 2px solid black;
+        } @media only screen and (max-width:800px) {
+            .slide img {
+                width: 94%;
+                height: auto;;
+            }
         }
     </style>
 </head>
@@ -124,7 +129,7 @@
                 i=10;
             else if(a == 9)
                 i=10;
-            window.open('#slide'+ i,top);
+            window.open('./#slide'+ i,top);
         } else if(slidesContainer.scrollTop < scrollPos) {
             // console.log("Going up",slidesContainer.scrollTop ,"  ", scrollPos)
             a=Math.floor(Math.abs(cnt.scrollTop+50)/boxHeight);
@@ -148,7 +153,7 @@
                 i=9;
             else if(a == 10)
                 i=10;
-            window.open('#slide'+ i,top);
+            window.open('./#slide'+ i,top);
         }
         
         scrollPos = slidesContainer.scrollTop;
