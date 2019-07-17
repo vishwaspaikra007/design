@@ -12,6 +12,7 @@ var contentSubDialogue2 = document.querySelector("#contentSubDialogue2 > span");
 var contentDialogue1 = document.querySelector("#contentDialogue1");
 var areyoureadyContainer = document.querySelector(".areyoureadyContainer");
 var dialogueContainer = document.querySelector(".dialogueContainer");
+var contentMainContainer = document.querySelector(".contentMainContainer");
 
 dialogue1.addEventListener("mouseover",(e)=> { mouseoverDialogue1() });
 var storeWidthDialogue1, storeMarginTopDialogue1;
@@ -21,7 +22,21 @@ window.onload =()=> {
         "calc(" + dialogue1.clientHeight/2 + "px - " + areyoureadyContainer.clientHeight + "px)";
     areyoureadyContainer.style.marginTop = storeMarginTopDialogue1;
 }
-
+window.onresize =()=> {
+    setTimeout(() => {
+        storeWidthDialogue1 = areyoureadyContainer.clientWidth;
+        storeMarginTopDialogue1 = 
+            "calc(" + dialogue1.clientHeight/2 + "px - " + areyoureadyContainer.clientHeight + "px)";
+        areyoureadyContainer.style.marginTop = storeMarginTopDialogue1;
+    
+        if(dialogue1.style.width == "100vw") {
+            dialogue1Function();
+        } else {
+            dialogue1MenuFunction();
+        }
+    }, 800);
+    
+}
 var mouseoverDialogue1 = ()=> {
     // replacement of mouse over
     meLooking.style.filter = "blur(11px)";
@@ -42,7 +57,7 @@ var mouseoverDialogue1 = ()=> {
 dialogue1.addEventListener("mouseout",(e)=> { mouseoutDialogue1() });
 
 var mouseoutDialogue1 = ()=> {
-    if( dialogue1.style.width == '100%')
+    if( dialogue1.style.width == '100%' && dialogue1.clientWidth > 800)
         return;
     meLooking.style.filter = "blur(0px)";
 
@@ -55,8 +70,8 @@ var mouseoutDialogue1 = ()=> {
     buildings.style.filter = "blur(30px)";
 }
 
-dialogue1.addEventListener('click',e => {
-
+dialogue1.addEventListener('click',e => { dialogue1Function() })
+dialogue1Function = ()=> {
     dialogue1.style.width = '100%';
     dialogue1.style.height = '100vh';
     dialogue1.style.top = '0px';
@@ -73,14 +88,21 @@ dialogue1.addEventListener('click',e => {
 
     dialogue1Menu.style.display = 'block';
 
-})
-dialogue1Menu.addEventListener('click',e => {
-
-    dialogue1.style.width = '50vw';
+    contentMainContainer.style.height = "calc(100% - 56px)";
+}
+dialogue1Menu.addEventListener('click',e => { dialogue1MenuFunction() })
+dialogue1MenuFunction =()=> {
+    if( dialogue1.clientWidth > 800 ) {
+        dialogue1.style.width = '50vw';
+        dialogue1.style.top = '25vh';
+        dialogue1.style.left = '35vw';
+    } else {
+        dialogue1.style.width = '100%';
+        dialogue1.style.top = '0';
+        dialogue1.style.left = '0';
+    }
     dialogue1.style.height = '50vh';
-    dialogue1.style.top = '25vh';
-    dialogue1.style.left = '35vw';
-    dialogue1.style.zIndex = '1';   
+    dialogue1.style.zIndex = '1'; 
 
     areyoureadyContainer.style.marginTop = storeMarginTopDialogue1;
 
@@ -89,8 +111,9 @@ dialogue1Menu.addEventListener('click',e => {
     contentSubDialogue2.innerHTML = "Click to know more";
 
     mainContainer.style.display = 'block';
-})
 
+    contentMainContainer.style.height = "0px";
+}
 mainContainer.onscroll = function() { parallex()};
  function parallex() {
     var scroll1 = mainContainer.scrollTop;
