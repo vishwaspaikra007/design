@@ -101,7 +101,8 @@
 
     var slidesContainer = document.querySelector(".slidesContainer");
     slidesContainer.addEventListener("scroll",()=> {
-            scrollFunction();
+        boxHeight = document.querySelector('.slide').clientHeight;
+        scrollFunction();
     })
 
     scrollFunction = (e)=> {
@@ -158,12 +159,6 @@
         
         scrollPos = slidesContainer.scrollTop;
     }
-
-    /*
-
-
-    }
-        */ 
 </script>
 </body>
 </html>
