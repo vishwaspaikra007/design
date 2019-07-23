@@ -130,10 +130,12 @@
                 i=10;
             else if(a == 9)
                 i=10;
+            var slide = document.querySelector('.cnt');
+            slide.scrollTop = boxHeight*(i-1);
             window.open('./#slide'+ i,top);
         } else if(slidesContainer.scrollTop < scrollPos) {
             // console.log("Going up",slidesContainer.scrollTop ,"  ", scrollPos)
-            a=Math.floor(Math.abs(cnt.scrollTop+50)/boxHeight);
+            a=Math.floor(Math.abs(cnt.scrollTop+boxHeight/3)/boxHeight);
             if(a == 1 || a == 0)
                 i=1;
             else if(a == 2)
@@ -154,6 +156,8 @@
                 i=9;
             else if(a == 10)
                 i=10;
+            var slide = document.querySelector('.cnt');            
+            slide.scrollTop = boxHeight*(i-1);            
             window.open('./#slide'+ i,top);
         }
         
