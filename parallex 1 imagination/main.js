@@ -78,8 +78,9 @@ dialogue1Function = ()=> {
     dialogue1.style.left = '0px';
     dialogue1.style.zIndex = '3';
     dialogue1.style.cursor = "default";
+    
+    dialogue1.style.gridTemplateRows = "40px 13px auto";
 
-    areyoureadyContainer.style.marginTop = '0px';
     areyoureadyContainer.style.width = storeWidthDialogue1 + "px";
 
     contentSubDialogue2.innerHTML = "Scroll to know about me";
@@ -87,8 +88,9 @@ dialogue1Function = ()=> {
     mainContainer.style.display = 'none';
 
     dialogue1Menu.style.display = 'block';
-
-    contentMainContainer.style.height = "calc(100% - 56px)";
+    setTimeout(() => {
+        contentMainContainer.style.height = "100%";        
+    }, 400);
 }
 dialogue1Menu.addEventListener('click',e => { dialogue1MenuFunction() })
 dialogue1MenuFunction =()=> {
@@ -103,8 +105,7 @@ dialogue1MenuFunction =()=> {
     }
     dialogue1.style.height = '50vh';
     dialogue1.style.zIndex = '1'; 
-
-    areyoureadyContainer.style.marginTop = storeMarginTopDialogue1;
+    dialogue1.style.gridTemplateRows = "90% 10%";
 
     dialogue1Menu.style.display = 'none';
 

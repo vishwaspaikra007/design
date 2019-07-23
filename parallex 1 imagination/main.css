@@ -124,6 +124,8 @@ body, div {
     z-index: 1;
     font-family: 'Spectral', serif;
     cursor: zoom-in;
+    display: grid;
+    grid-template-rows: 90% 10%;
 } .areyoureadyContainer {
     width: 100%;
     height: 40px;
@@ -133,6 +135,7 @@ body, div {
     display: grid;
     grid-template-columns: 50% 50%;
     overflow: hidden;
+    margin: auto;
 } .dialogueContainer {
     font-size: 24px;
     width: 100%;
@@ -181,6 +184,8 @@ body, div {
         top: 0px;
     } .meLooking {
         height: 70vh;
+    } .dialogueContainer {
+        font-size: 18px;
     }
 } .dialogue1Menu {
     width: 50px;
