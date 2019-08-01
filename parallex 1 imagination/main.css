@@ -98,8 +98,8 @@ body, div {
 } .meLooking {
     transform-origin: bottom;
     transform: rotateX(90deg);
-    width: 40vw;
-    height: 40vw;
+    width: 100px;
+    height: 550px;
     position: fixed;
     bottom: -5;
     left: 10vw;
@@ -196,12 +196,13 @@ body, div {
     left: calc(100% - 67px);
     display: none;
     cursor: zoom-out;
+    z-index: 1;
 } .buildings {
-    width: calc(100% -17px);
+    width: 120%;
     display: grid;
-    bottom: 0vh;
+    bottom: -1vh;
     position: absolute;
-    left: -5vw;
+    margin-left: -10%;
     filter: blur(30px);
     transition: 600ms;
     bottom: -5vh;
