@@ -5,50 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>chrome tab design</title>
-    <style>
-        .tabsHeadContainer, .tabsHead {
-            box-sizing: border-box;
-        }
-        .tabsHeadContainer {
-            width: 100%;
-            height: 30px;
-            display: grid;
-            grid-template-columns: 20% 20% 20% 20% 20%;
-        } .tabsHead {
-            min-width: 50px;
-            max-width: 100%;
-            text-align: center;
-            border-radius: 10px 10px 0 0;
-            background: black;
-            color: white;
-            padding-top: 6.5px;
-            cursor: pointer;
-            margin: 0.5px;
-        } #tabHead5 {
-            border-right: 1px solid;
-        } .tabsHead:hover {
-            background: white;
-            color: black;
-            border: 1px solid;
-        } .tabsContainer {
-            height: calc(90vh - 30px);
-        } .tabs {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            background: white;
-        } #tab1 {
-            z-index: 0;
-        } #tab2 {
-            z-index: -1;
-        } #tab3 {
-            z-index: -1;            
-        } #tab4 {
-            z-index: -1;
-        } #tab5 {
-            z-index: -1;
-        }
-    </style>
+    <link rel="stylesheet" href="./main.css">
 </head>
 <body>
     <div class="tabsHeadContainer">
@@ -65,26 +22,6 @@
         <div class="tabs" id="tab4">Deleted</div>
         <div class="tabs" id="tab5">Failed</div>
     </div>
-    <script>
-        function show(index,ths) {
-            var hidetab = document.querySelectorAll(".tabs");
-            var hidetabHead = document.querySelectorAll(".tabsHead");
-            for(i=0;i<hidetab.length;i++)
-            {
-                hidetab[i].style.zIndex = "-1";
-                hidetabHead[i].style.background = "black";
-                hidetabHead[i].style.color = "white";
-                hidetabHead[i].style.border = "none";
-            }
-            document.querySelector("#tab" + index).style.zIndex = "0";
-            ths.style.background = "white";
-            ths.style.color = "black";
-            ths.style.borderBottom = "none";
-            ths.style.border = "1px solid ";
-            ths.style.borderBottom = "none";
-
-
-        }
-    </script>
+<script src="./main.js"></script>
 </body>
 </html>

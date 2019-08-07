@@ -1,0 +1,42 @@
+.tabsHeadContainer, .tabsHead {
+    box-sizing: border-box;
+}
+.tabsHeadContainer {
+    width: 100%;
+    height: 30px;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+} .tabsHead {
+    min-width: 50px;
+    max-width: 100%;
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+    background: black;
+    color: white;
+    padding-top: 6.5px;
+    cursor: pointer;
+    margin: 0.5px;
+} #tabHead5 {
+    border-right: 1px solid;
+} .tabsHead:hover {
+    background: white;
+    color: black;
+    border: 1px solid;
+} .tabsContainer {
+    height: calc(90vh - 30px);
+} .tabs {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: white;
+} #tab1 {
+    z-index: 0;
+} #tab2 {
+    z-index: -1;
+} #tab3 {
+    z-index: -1;            
+} #tab4 {
+    z-index: -1;
+} #tab5 {
+    z-index: -1;
+}

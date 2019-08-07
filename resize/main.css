@@ -1,0 +1,51 @@
+body {
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}.container {
+    width: 100%;
+    height: 100vh;
+    border: 1px solid black;
+    box-sizing: border-box;
+    display: grid;
+}.box::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}.box::-webkit-scrollbar-thumb {
+    background: #0000005a;
+}.box::-webkit-scrollbar-track {
+    background: #0000002a;
+}.box {
+    border: 1px solid black;
+    box-sizing: border-box;
+    overflow: hidden scroll;
+} .box p {
+    padding: 10px;
+    font-size: -webkit-xxx-large;
+} #box2 {
+    overflow: hidden;
+    cursor: ew-resize;
+    background: black;
+    margin: 0;
+} #box1 {
+    background: rgba(197,0,0, 0.5);
+} #box3 {
+    background: rgba(0,255,0,0.5);
+} #box2::after {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 20px;
+    position: absolute;
+    margin-left: -10px;
+    z-index: 10;
+} @media only screen and (max-width:800px) {
+    #box2::after {
+        width: 100%;
+        height: 20px;
+        margin-top: -10px;
+    } #box2 {
+        cursor: ns-resize;
+    }
+}

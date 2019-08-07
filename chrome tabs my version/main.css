@@ -1,0 +1,87 @@
+::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+} ::-webkit-scrollbar-track {
+    background: green;
+    width: 1px;
+} ::-webkit-scrollbar-thumb {
+    width: 0px;
+} 
+body {
+    margin: 0px;
+}
+.tabsHeadContainer, .tabsHead, .contcont, .tabsContainer, .tabs {
+    box-sizing: border-box;
+} .contcont {
+    width: calc(100% - 1px);
+    overflow-x: hidden;
+    overflow: scroll;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: 0px;
+    transition: 2s;
+    position: sticky;
+    top: 0px;
+    z-index: 2;
+    margin-left: 1px;
+}
+.tabsHeadContainer {
+    min-width: 600px;
+    height: 40px;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+} .tabsHead {
+    min-width: 50px;
+    max-width: 100%;
+    height: 80%;
+    text-align: center;
+    border-radius: 10px;
+    background: black;
+    color: white;
+    padding-top: 6.5px;
+    cursor: pointer;
+    margin: 0.5px;
+    scroll-behavior: smooth;
+    transition: 0.5s;
+    margin-top: 2px;
+    border: 1px solid;
+} #tabHead1{
+    background: white;
+    color: black;
+    border: 1px solid;
+    border-radius: 0;
+    border-bottom: none;
+    height: 92%;
+    border-bottom: 1px solid white;
+    position: sticky;
+    left: 0px;
+    margin-left: 0px;
+} #tabHead5 {
+    border-right: 1px solid;
+} .tabsHead:hover {
+    background: white;
+    color: black;
+    border: 1px solid;
+} .tabsContainer {
+    height: calc(90vh - 30px);
+    position: relative;
+    top: -2px;
+} .tabs {
+    width: calc(100% - 1px);
+    height: 100%;
+    position: absolute;
+    background: white;
+    display: block;
+    margin-left: 0.5px;
+    border: 1px solid;
+    padding: 20px;
+} #tab1 {
+    z-index: 0;
+} #tab2 {
+    z-index: -1;
+} #tab3 {
+    z-index: -1;            
+} #tab4 {
+    z-index: -1;
+} #tab5 {
+    z-index: -1;
+}
