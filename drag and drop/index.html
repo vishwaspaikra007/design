@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Drag and Drop</title>
+    <style>
+        body {
+            margin: 0;
+            /* display: flex;
+            align-items: center;
+            justify-content: center; */
+            height: 100vh;
+        }
+        .container {
+            width: 90vh;
+            height: 90vh;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 33.33% 33.33% 33.33% ; 
+            grid-gap: 2px;
+            border: 2px solid black;
+        }
+        .box {
+            margin: auto;
+            width: 90%;
+            height: 90%;
+            border-radius: 20px;
+            border: 2px solid black;
+        } .start {
+            background: green;
+            width: 50px;
+            height: 50px;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="start" onmousedown="drag(this)" onmouseup="stopDrag(this)"></div>            
+    <div class="container">
+        <div class="box" onmouseenter="hello()"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+    <script>
+        var X=0,Y=0,dragBool=false;
+        window.onmousemove = (event) => {
+            event.preventDefault();
+            X =event.clientX;
+            Y =event.clientY;
+           if (dragBool) { 
+            var start = document.querySelector('.start');
+            start.style.position = 'fixed';
+            start.style.top = Y - 25 + "px";
+            start.style.left = X - 25 + "px";
+            console.log(X);}
+        }
+        var drag = (e)=> {
+            dragBool = true;
+        }
+        var stopDrag = ()=> {
+            var start = document.querySelector('.start');
+            start.style.position = 'relative';
+            dragBool=false;
+        }
+        var hello = ()=> {
+            console.log("hello")
+        }
+    </script>
+</body>
+</html>

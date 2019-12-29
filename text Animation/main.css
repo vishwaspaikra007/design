@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1 {
+    line-height: calc(100vh - 30px);
+    text-align: center;
+    font-size: 10vw;
+}
+span {
+    transition: 500ms;
+    transform: translateY(30px);
+    display: inline-block;
+    color: white;
+}
+.rest {
+    transform: translateY(0);
+    color: orangered;
+    background-attachment: fixed;
+    background-image: url('https://colibriwp.com/blog/wp-content/uploads/2019/08/watercolor2.png');
+    background-size: cover;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
