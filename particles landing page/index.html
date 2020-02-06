@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .superContainer,
+        .container3 {
+            display: flex;
+            align-items: center;
+            background: black;
+            justify-content: center;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+        }
+
+        .container {
+            width: 150vw;
+            height: 50vw;
+            overflow: hidden;
+            padding-top: 20%;
+            animation: animate;
+            animation-iteration-count: infinite;
+            animation-duration: 60s;
+            animation-timing-function: linear;
+        }
+
+        .container3 {
+            position: absolute;
+            top: 0;
+            background: transparent;
+            color: white;
+            font-size: 10vw;
+            transition: 500ms ease;
+            /* animation-direction: alternate-reverse; */
+        } .container3 > span {
+            font-family: 'Gloria Hallelujah', cursive;
+            background: linear-gradient(75deg, #7da038, #0b87b7);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 400% 400%;
+            font-weight: bold;
+            padding: 20px;
+            opacity: 1;
+            animation: animateText;
+            animation-iteration-count: infinite;
+            animation-duration: 6s;
+            animation-timing-function: linear;
+        }
+
+        .particles {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin: 3px;
+            display: inline-block;
+            background: rgb(166, 255, 0);
+            transition: 200ms ease;
+            margin-top: 0.6%;
+            /* box-shadow: 0 10px 15px -5px white; */
+        }
+
+        .content {
+            height: 100vh;
+            margin-top: 90vh;
+            position: relative;
+            background: linear-gradient(75deg, #7da038, #0b87b7);
+            border-radius: 30px 30px 0 0;
+        }
+
+        @keyframes animate {
+            0% {
+                transform: rotate(0deg)
+            }
+
+            100% {
+                transform: rotate(360deg)
+            }
+        }
+        @keyframes animateText {
+            0% {
+                background-position: left top
+            }
+
+            50% {
+                background-position: bottom right;
+            }
+
+            100% {
+                background-position: top left;
+            }
+        }
+
+
+        @media only screen and (max-width: 800px) {
+            .container {
+                width: 150vh;
+                height: 100vh;
+                position: absolute;
+            }
+            .container3 {
+                font-size: 17vw;
+            }
+        }
+    </style>
+</head>
+
+<body onload="init()">
+    <div class="superContainer">
+        <div class="container"></div>
+        <div class="container3"><span>VISHWAS</span></div>
+    </div>
+    <div class="content"></div>
+    <script>
+        function init() {
+            add()
+            move();
+        }
+        function add() {
+            var container = document.querySelector('.container');
+            container.innerHTML = "";
+            for (let i = 0; i < 70; i++) {
+                container.innerHTML += '<div class="particles onclick="move(this)"></div>'
+            }
+            // var container2 = document.querySelector('.container2');
+            // container2.innerHTML = "";
+            // for(let i=0;i<50;i++) {
+            //     container2.innerHTML += '<div class="particles onclick="move(this)"></div>'
+            // }
+        }
+        function move(ths) {
+            let i = 0;
+            document.querySelectorAll(".particles").forEach((particle, i) => {
+                setInterval(() => {
+                    let rand = Math.random();
+                    let rand0 = Math.random() * 500 - 100;
+                    let rand1 = Math.random() * 255 + 1;
+                    let rand2 = Math.random() * 255 + 1;
+                    let rand3 = Math.random() * 255 + 1;
+                    particle.style.transform = `translate(${Math.sin(0)}px, ${Math.sin(i++) * 40}px) scale(${rand * 1.1}`;
+
+                    // particle.style.background = `rgba(255,${rand2},${rand2})`;
+                    // particle.style.transform = `scale(${rand * 1})`;
+                    if (i >= 150) {
+                        if (i > 360)
+                            i = 0;
+                        particle.style.background = `rgba(${rand1},${rand2},${rand3})`;
+                    } else if (i < 150)
+                        particle.style.background = `rgb(166, 255, 0)`;
+                }, 200);
+            });
+
+        }
+
+        window.onscroll = function() {parallex()};
+        function parallex() {
+            //To get the scroll property
+            var scroll1 = document.documentElement.scrollTop;
+            var height1 = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled1 = (scroll1/height1)*100;
+            var text = document.querySelector('.container3 > span');
+            text.style.opacity = (1 - scrolled1/100); 
+            text.style.transform = `translate(0px , -${scrolled1*3}px) scale(${1 + scrolled1/100}) `; 
+        }
+        
+    </script>
+</body>
+
+</html>
