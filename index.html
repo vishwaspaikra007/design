@@ -28,14 +28,14 @@
             height: 100vh;
             padding: 30px;
             margin: 0px;
-            overflow: hidden;
+            /* overflow: hidden; */
         } .containerDesign {
             width: 100%;
-            height: 100%;
+            /* height: 100%; */
             margin: 0px;
             display: grid;
             grid-template-columns: 25% 75%;
-            overflow: hidden;
+            /* overflow: hidden; */
         } .buttons {
             border-radius: 20px;
             background: whitesmoke;
@@ -48,10 +48,31 @@
             border: 2px solid black;
             color: black;
         }
-        @media only screen and (max-width:600px)
+        @media only screen and (max-width:800px)
         {
             iframe {
-                width: 90%;
+                width: 100%;
+                border: 1px solid black;
+                height: calc(100vh - 20px);
+                margin-bottom: 10px;
+            }
+            .containerDesign {
+                grid-template-columns: auto;
+            }
+            body {
+                padding: 10px;
+            }
+        }
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: black;
+            } .buttons {
+                background: #aaaaaa33;
+            } .btn {
+                background: rgb(0, 80, 67);
+                border: none;
+            } iframe {
+                border: 1px solid gray;
             }
         }
     </style>
@@ -76,6 +97,7 @@
             <button onclick="src(12)" class="btn btn-success org" id="button12">moodindigo</button>
             <button onclick="src(13)" class="btn btn-success" id="button13">text Animation</button> 
             <button onclick="src(14)" class="btn btn-success" id="button14">selection</button> 
+            <button onclick="src(15)" class="btn btn-success" id="button15">particles landing page</button> 
         </div>
         <iframe src="" frameborder="0"></iframe>
     </div>
