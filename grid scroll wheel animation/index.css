@@ -1,0 +1,30 @@
+* {
+    transition: 100ms;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+.container {
+    background: black url('./red-vector-scenary.jpg') center;
+    background-size: cover;
+    min-width: 290px;
+    height: 100vh;
+    overflow: hidden;
+    overflow-y: auto;
+} .randomBoxes {
+    box-shadow: 0 0 14px -4px black;
+    cursor: pointer;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 60px;
+    color: #ffffff71;
+    background-color: darkcyan;
+} 
+.container > div {
+    margin: 20px;
+    margin-top: 100px;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display: grid;
+}
