@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
+@media (prefers-color-scheme: dark)
+{
+    .btn {
+        box-shadow: 0 0 14px -2px white;
+        color: white;
+    }
+}

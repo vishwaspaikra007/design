@@ -1,0 +1,25 @@
+.btn {
+    width: 50vmin;
+    height: 50vmin;
+    border-radius: 20px;
+    box-shadow: 0 0 14px -4px;
+    overflow: hidden;
+    position: relative;
+    line-height: 50vmin;
+    text-align: center;
+    padding: 10px;
+} .circularScaleA {
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    border-radius: 50%;
+    position: absolute;
+} .btn > .circularScaleAafter {
+    transform: scale(10);
+    opacity: 0;
+    transition: 1s;
+} .circularScaleAstart {
+    transition: 0s;
+    transform: scale(0);
+    opacity: 1;
+}
