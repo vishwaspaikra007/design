@@ -6,13 +6,17 @@
 body {
     height: 100vh;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 } 
 @media (prefers-color-scheme: dark)
 {
     .btn {
         box-shadow: 0 0 14px -2px white;
         color: white;
+    }
+    body {
+        background-color: black;
     }
 }
