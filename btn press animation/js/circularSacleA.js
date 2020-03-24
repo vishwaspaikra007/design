@@ -7,18 +7,23 @@ for(let i=0;i<btn.length;i++)
     let cirscabtnA = document.createElement("div");
     cirscabtnA.classList.add('circularScaleA');
     cirscabtnA.classList.add('circularScaleAafter');
+    //add container for the above element
+    let circularScaleAContainer = document.createElement("div");
+    circularScaleAContainer.classList.add('circularScaleAContainer');
+    circularScaleAContainer.prepend(cirscabtnA);
 
-    btn[i].prepend(cirscabtnA);
+    btn[i].prepend(circularScaleAContainer);
     btn[i].setAttribute('onclick', 'btncirscabtnAFunc(this,event)');
 }
 
 function btncirscabtnAFunc(ths, e) {
     if(getSelection().toString())
         return;
-    xOffset = ths.getBoundingClientRect().x;
-    yOffset = ths.getBoundingClientRect().y;
+    let circularScaleAContainer = ths.querySelector('.circularScaleAContainer');
+    xOffset = circularScaleAContainer.getBoundingClientRect().x;
+    yOffset = circularScaleAContainer.getBoundingClientRect().y;
 
-    var after = ths.querySelector('.circularScaleA');
+    var after = circularScaleAContainer.querySelector('.circularScaleA');
     width = after.clientWidth;
     height = after.clientHeight;
 
@@ -26,6 +31,7 @@ function btncirscabtnAFunc(ths, e) {
     after.style.marginTop = e.y - yOffset - height/2 + "px";
     after.classList.add('circularScaleAstart');
     after.classList.remove('circularScaleAafter');
+
     setTimeout(() => {
         after.classList.remove('circularScaleAstart');
         after.classList.add('circularScaleAafter');

@@ -5,23 +5,29 @@
     box-shadow: 0 0 14px -4px;
     overflow: hidden;
     position: relative;
-    line-height: 50vmin;
     text-align: center;
     padding: 10px;
     margin: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 } .circularScaleA {
     width: 100px;
     height: 100px;
     background-color: orange;
     border-radius: 50%;
     position: absolute;
-    z-index: -1;
-} .btnCircularScaleA > .circularScaleAafter {
+    z-index: 0;
+} .circularScaleAContainer > .circularScaleAafter {
     transform: scale(10);
     opacity: 0;
     transition: 1s;
-} .btnCircularScaleA > .circularScaleAstart {
+} .circularScaleAContainer > .circularScaleAstart {
     transition: 0s;
     transform: scale(0);
     opacity: 1;
+} .circularScaleAContainer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
 }
