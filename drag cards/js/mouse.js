@@ -1,52 +1,50 @@
 let cards = document.querySelectorAll('.cards');
+let activeEle = document;
+
+let allowDrag=false;
+let offsetx = 0;
+let offsety = 0;
+
 cards.forEach( (ele,i) => {
-    let allowDrag=false;
-    let offsetx = 0;
-    let offsety = 0;
     
-    ele.style.transform = 'translate(0,0)';
     ele.addEventListener('mousedown', (event) => {
         allowDrag = true;
-        matrix = new WebKitCSSMatrix(window.getComputedStyle(ele).webkitTransform);
-        ele.style.zIndex = `30`;
-        console.log(matrix);
-        // if(offset==0)
-            offsetx = event.x ;
-            offsety = event.y ;
-            event.target.style.transform += ` scale(1.1)`;
-            ele.style.background = `orange`;
-            setTimeout(() => {
-                ele.style.transition = `0s`;
-              }, 400);
-        // else
-        //     offset = matrix.m41;
+        activeEle = ele;
+        matrix = new WebKitCSSMatrix(window.getComputedStyle(ele.parentNode).webkitTransform);
+        activeEle.style.zIndex = `30`;
+        
+        offsetx = event.screenX ;
+        offsety = event.screenY ;
 
+        activeEle.style.background = `orange`;
+        activeEle.style.transform = 'scale(1.1)';
     });
-    ele.addEventListener('mouseup', (event) => {
+    
+});
+
+document.querySelector('body').addEventListener('mouseup', (event) => {
+    if(activeEle && allowDrag)
+   { 
         allowDrag = false;
-        ele.style.zIndex = `1`;
-        event.target.style.transform = ` scale(1)`;
-        ele.style.background = `none`;
-        ele.style.transition = `400ms`;
+        activeEle.style.transform = 'scale(1)';
+        
+        activeEle.style.zIndex = `1`;
+        activeEle.style.background = `none`;
+        setTimeout(() => {
+            activeEle = null;    
+        }, 100);
+    }
+});
 
-    });
-    ele.addEventListener('mouseout', (event) => {
-        allowDrag = false;
-        ele.style.zIndex = `1`;
-        event.target.style.transform = ` scale(1)`;
-        ele.style.background = `none`;
-        ele.style.transition = `400ms`;
-    });
-    ele.addEventListener('mousemove', (event) => {
+document.querySelector('body').
+addEventListener('mousemove', (event) => {
 
-        if(allowDrag)
-        {
+    if(allowDrag && activeEle)
+    {
 
-            let x = ((event.x - offsetx) + event.target.parentNode.getBoundingClientRect().x + matrix.m41);
-            let y = ((event.y - offsety)  + matrix.m42);
-            // console.log(event.target.parentNode);
+        let x = ((event.screenX - offsetx)  + matrix.m41);
+        let y = ((event.screenY - offsety)  + matrix.m42);
 
-            event.target.style.transform = `translate(${x}px,${y}px) scale(1.1)`;
-        }
-    });
+        activeEle.parentNode.style.transform = `translate(${x}px,${y}px)`;
+    }
 });

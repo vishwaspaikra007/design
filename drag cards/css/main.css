@@ -15,16 +15,26 @@ html, body {
     overflow-y: scroll;
     position: relative;
     display: grid;
+    grid-template-columns: auto auto;
 } .cardsContainer {
-    position: relative;
-}.cards {
-    transition: 200ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #008000;
+} .wraper {
+    width: 300px;
+    height: 60px;
     position: absolute;
-    width: 45.7%;
+}.cards {
+    transition: 1000ms;
+    width: 300px;
     display: inline-block;
     border: 2px solid;
     margin: 2%;
     height: 60px;
+    border-radius: 10px;
     border: 2px solid orange;
     transform: translate(0,0);
+    text-align: center;
+    line-height: 60px;
 }
