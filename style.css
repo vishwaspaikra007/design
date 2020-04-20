@@ -1,4 +1,8 @@
-div {
+body {
+    height: 100vh;
+    overflow: hidden;
+}
+* {
     box-sizing: border-box;
 } iframe {
     width: 50%;
@@ -33,23 +37,55 @@ div {
 } .btn {
     margin-right: 10px;
     margin-bottom: 10px;
+    max-width: -webkit-fill-available;
+    text-overflow: ellipsis;
+    overflow: hidden;
 } .org {
     border: 2px solid black;
     color: black;
+}  .btnsContainer {
+    height: 90vh;
+    overflow: hidden;
+    overflow-y: auto;
+    border-radius: 20px;
+    transition: 500ms;
 }
 @media only screen and (max-width:800px)
 {
     iframe {
         width: 100%;
         border: 1px solid black;
-        height: calc(100vh - 20px);
+        height: calc(100vh - 180px);
         margin-bottom: 10px;
     }
     .containerDesign {
         grid-template-columns: auto;
     }
     body {
+        height: 80vh;
+        position: fixed;
         padding: 10px;
+    } .projects {
+        display: block;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        box-shadow: 0 0 14px -4px;
+        margin: 10px 20px 10px auto;
+        background: url('./asset/img/icons8-menu.svg');
+        background-size: 60%;
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: 500ms;
+    }.projects:hover {
+        transform: scale(1.1);
+    }.projects:active {
+        transition: 0ms;
+        transform: scale(1);
+        box-shadow: 0 0 14px -4px black;
+    } .btnsContainer {
+        max-height: 500px;
+        height: auto;
     }
 }
 @media (prefers-color-scheme: dark) {
@@ -62,5 +98,22 @@ div {
         border: none;
     } iframe {
         border: 1px solid gray;
+    }  .projects {
+        box-shadow: 0 0 14px -4px #ffc50a;
+    }.projects:hover {
+        box-shadow: 0 0 14px -1px #ffc50a;
+    }.projects:active {
+        box-shadow: 0 0 14px -4px #ffc50a;
     }
+}
+::-webkit-scrollbar-track {
+    width: 20px;
+    /* background: #aaaaaaaa; */
+} ::-webkit-scrollbar {
+    width: 10px;
+    background: #aaaaaa55;
+    border-radius: 10px;
+} ::-webkit-scrollbar-thumb {
+    background: #3ec9a66e;
+    border-radius: 10px;
 }

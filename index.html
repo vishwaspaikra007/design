@@ -11,38 +11,61 @@
     <title>Design</title>
 </head>
 <body>
+    <span class="projects" onclick="projects()"></span>
     <div class="containerDesign">
-        <div class="buttons">
-            <button onclick="src(this)" class="btn btn-success" >chrome tabs my version</button>
-            <button onclick="src(this)" class="btn btn-success" >crome tab design</button>
-            <button onclick="src(this)" class="btn btn-success" >div slide update delete</button>
-            <button onclick="src(this)" class="btn btn-success" >google logo</button>
-            <button onclick="src(this)" class="btn btn-success" >notification</button>
-            <button onclick="src(this)" class="btn btn-success" >slide like phone</button>
-            <button onclick="src(this)" class="btn btn-success" >time left prgress</button>
-            <button onclick="src(this)" class="btn btn-success" >menu div block swipe right</button> 
-            <button onclick="src(this)" class="btn btn-success" >photo stack</button> 
-            <button onclick="src(this)" class="btn btn-success" >resize</button> 
-
-            <a href="./parallex 1 imagination/index.html" target="blank">
-                <button onclick="src(this)" class="btn btn-success org" >parallex 1 imagination</button> 
-            </a>
-            <button onclick="src(this)" class="btn btn-success org" >moodindigo</button>
-            <button onclick="src(this)" class="btn btn-success" >text Animation</button> 
-            <button onclick="src(this)" class="btn btn-success" >selection</button> 
-            <button onclick="src(this)" class="btn btn-success" >particles landing page</button> 
-            <button onclick="src(this)" class="btn btn-success" >animation with scroll</button> 
-            <button onclick="src(this)" class="btn btn-success" >grid scroll wheel animation</button> 
-            <button onclick="src(this)" class="btn btn-success" >btn press animation</button> 
-            <button onclick="src(this)" class="btn btn-success" >drag cards</button> 
-            <button onclick="src(this)" class="btn btn-success" >draw</button> 
+        <div class="btnsContainer">
+            <div class="buttons">
+                <button onclick="src(this)" class="btn btn-success" >chrome tabs my version</button>
+                <button onclick="src(this)" class="btn btn-success" >crome tab design</button>
+                <button onclick="src(this)" class="btn btn-success" >div slide update delete</button>
+                <button onclick="src(this)" class="btn btn-success" >google logo</button>
+                <button onclick="src(this)" class="btn btn-success" >notification</button>
+                <button onclick="src(this)" class="btn btn-success" >slide like phone</button>
+                <button onclick="src(this)" class="btn btn-success" >time left prgress</button>
+                <button onclick="src(this)" class="btn btn-success" >menu div block swipe right</button> 
+                <button onclick="src(this)" class="btn btn-success" >photo stack</button> 
+                <button onclick="src(this)" class="btn btn-success" >resize</button> 
+    
+                <a href="./parallex 1 imagination/index.html" target="blank">
+                    <button onclick="src(this)" class="btn btn-success org" >parallex 1 imagination</button> 
+                </a>
+                <button onclick="src(this)" class="btn btn-success org" >moodindigo</button>
+                <button onclick="src(this)" class="btn btn-success" >text Animation</button> 
+                <button onclick="src(this)" class="btn btn-success" >selection</button> 
+                <button onclick="src(this)" class="btn btn-success" >particles landing page</button> 
+                <button onclick="src(this)" class="btn btn-success" >animation with scroll</button> 
+                <button onclick="src(this)" class="btn btn-success" >grid scroll wheel animation</button> 
+                <button onclick="src(this)" class="btn btn-success" >btn press animation</button> 
+                <button onclick="src(this)" class="btn btn-success" >drag cards</button> 
+                <button onclick="src(this)" class="btn btn-success" >draw</button> 
+                <button onclick="src(this)" class="btn btn-success" >social-media-dashboard-with-theme-switcher-master</button> 
+            </div>
         </div>
+        
         <iframe src="" frameborder="0"></iframe>
     </div>
     <script>
         function src(ths) {
             var src = document.querySelectorAll(".btn");
             document.querySelector("iframe").src = `./${ths.textContent}/index.html`;
+            if(document.documentElement.clientHeight > document.documentElement.clientWidth)
+                projects();
+        }
+        function projects() {
+            let projects = document.querySelector('.projects');
+            let btnsContainer = document.querySelector('.btnsContainer');
+            if(btnsContainer.style.height == "500px" || btnsContainer.style.height == "")
+                {
+                    btnsContainer.style.height = "0px";
+                    btnsContainer.style.opacity = "0";
+                    projects.style.marginBottom = "0px";
+                }
+            else
+                {
+                    btnsContainer.style.height = "500px";
+                    btnsContainer.style.opacity = "1";
+                    projects.style.marginBottom = "10px";
+                }
         }
     </script>
 </body>
