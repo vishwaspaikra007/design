@@ -40,7 +40,14 @@ body {
     max-width: -webkit-fill-available;
     text-overflow: ellipsis;
     overflow: hidden;
-} .org {
+    background: #008b8b;
+    color: white;
+} .btn:hover, .btn:active {
+    background: orange;
+    color: white;
+} .btnSelected {
+    background: orange;
+}.org {
     border: 2px solid black;
     color: black;
 }  .btnsContainer {
@@ -94,7 +101,6 @@ body {
     } .buttons {
         background: #aaaaaa33;
     } .btn {
-        background: rgb(0, 80, 67);
         border: none;
     } iframe {
         border: 1px solid gray;
@@ -104,6 +110,9 @@ body {
         box-shadow: 0 0 14px -1px #ffc50a;
     }.projects:active {
         box-shadow: 0 0 14px -4px #ffc50a;
+    }
+    .btnSelected {
+        background: orange;
     }
 }
 ::-webkit-scrollbar-track {

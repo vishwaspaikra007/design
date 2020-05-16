@@ -1,0 +1,35 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}.header {
+    width: 90%;
+    height: 200px;
+    background-color: orange;
+    position: fixed;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 200px;
+    margin-top: 0px;
+    /* transition: width 1s, margin-left 1s, padding-top 1s; */
+    transition: 500ms;
+    margin-left: 5%;
+    font-size: 58px;
+    font-weight: 700;
+}
+.contents {
+    display: grid;
+    grid-template-columns: repeat(auto-fit ,minmax(300px, 1fr));
+    padding: 320px 5%;
+}
+.content {
+    width: 80%;
+    height: 80px;
+    background-color: darkcyan;
+    margin: auto;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 80px;
+
+}
